@@ -16,10 +16,10 @@ const AllCountries = () => {
   return (
     <div style={day ? light : dark}>
       <TopBar />
-      <div className="w-4/5 mx-auto">
-        <div className="flex justify-between my-6">
+      <div className="sm:w-4/5 md:w-[90%] mx-auto">
+        <div className="sm:h-36 md:flex md:justify-between my-6">
           {/* search bar */}
-          <div className="w-2/5 h-12 flex border shadow-sm">
+          <div className="sm:w-3/5 md:w-2/5 h-12 flex border shadow-sm">
             <FontAwesomeIcon icon={faSearch} className="pt-4 ml-3" />
             <input
               placeholder="Search for countries..."
@@ -33,7 +33,7 @@ const AllCountries = () => {
           {/* options */}
           <select
             placeholder="filter by region "
-            className="shadow-sm sm:w-2/6 md:w-1/6 border px-3 text-sm font-normal"
+            className="shadow-sm sm:w-2/6 md:w-1/6 sm:h-10 sm:mt-5 border px-3 text-sm font-normal"
             style={day ? light : dark}
             aria-label="Filter Countries By Region"
             onChange={(e) => {
