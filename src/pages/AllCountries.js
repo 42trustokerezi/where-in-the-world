@@ -16,7 +16,7 @@ const AllCountries = () => {
   return (
     <div style={day ? light : dark}>
       <TopBar />
-      <div className="sm:w-4/5 md:w-[90%] mx-auto">
+      <div className="w-4/5 mx-auto">
         <div className="flex justify-between my-6">
           {/* search bar */}
           <div className="w-2/5 h-12 flex border shadow-sm">
