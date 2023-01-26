@@ -1,23 +1,21 @@
-import logo from './logo.svg';
-import './App.css';
+import React from "react";
+import "./App.css";
+import { ApiProvider } from "./helper/contexts/apiContext";
+import { ThemeContext } from "./helper/contexts/themeContext";
+import AllCountries from "./pages/AllCountries";
+import { Route, Routes } from "react-router-dom";
+import CountryDetails from "./pages/CountryDetails";
 
 function App() {
+  const { day, light, dark } = React.useContext(ThemeContext);
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className={day ? light : dark}>
+      <ApiProvider>
+        <Routes>
+          <Route path="/" element={<AllCountries />} />
+          <Route path="/:name" element={<CountryDetails />} />
+        </Routes>
+      </ApiProvider>
     </div>
   );
 }
